@@ -3,6 +3,7 @@ export interface ITodo {
     task?: string;
     completed?: string;
     userid?: number;
+    name: string,
     created_at: Date;
     
 }

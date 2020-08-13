@@ -36,15 +36,12 @@ const Display: React.FC<DisplayProps> = ({ todo }) => {
 
         <div className="col-md-10 mb-sm-10 mx-auto" onClick={() => history.push(`/details/${todo.id}`)}>
             <ul className="list-group">
-                <li className="list-group-item">{todo.task}</li>
+                <li className="list-group-item">{todo.task}, {todo.name} </li>
                 {/* <Link to={`/details/${todo.id}`} className="btn btn-success btn-sm">Continue</Link> */}
 
 
             </ul>
         </div>
-
-
-
 
         // </div>
 

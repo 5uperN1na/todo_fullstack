@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 import {useState, useEffect } from 'react';
-import type { ITodo } from '../utils/interfaces';
+import type { ITodo, ICategory } from '../utils/interfaces';
 import Display from '../components/Display';
 import Navbar from '../components/Navbar';
 import apiService from '../utils/api-service';
@@ -9,14 +9,18 @@ import apiService from '../utils/api-service';
 const Home: React.FC<HomeProps> = (props) => {
 
     const [todos, setTodos] = useState<ITodo[]>([]);
+    const [categories, setCategories] = useState<ICategory[]>([]);
 
-    const getTodos = async () => {
+    const getData = async () => {
+
+        const categories = await apiService('/api/categories');
         const todos = await apiService('/api/todos');
         setTodos(todos);
+        setCategories(categories);
     };
 
     useEffect(() => {
-        getTodos();
+        getData();
     }, []);
 
 
@@ -33,8 +37,6 @@ const Home: React.FC<HomeProps> = (props) => {
                     <Display key={`display-card-${todo.id}`} todo={todo} />
 
                 ))}
-
-
             </section>
 
         </main>
