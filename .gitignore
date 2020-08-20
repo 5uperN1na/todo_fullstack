@@ -1,4 +1,6 @@
 node_modules/
+#compiled server code
 dist/
+#compiled react code
 public/js/app.js
 .env

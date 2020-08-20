@@ -33,13 +33,13 @@ const App: React.FC<AppProps> = (props) => {
 				</PrivateRoute>
 
 
-				<Route exact path="/details/:todoid">
+				<PrivateRoute exact path="/details/:todoid">
 					<Details />
-				</Route>
+				</PrivateRoute>
 
-				<Route exact path="/edit/:todoid">
+				<PrivateRoute exact path="/edit/:todoid">
 					<Edit />
-				</Route>
+				</PrivateRoute>
 
 
 			</Switch>
